@@ -1,11 +1,11 @@
 require 'selenium-webdriver' 
 require 'rspec'
 
-describe "redirecionamento" do
+describe "Redirecionamento" do
 
             it "Tela Login" do
             driver = Selenium::WebDriver.for :chrome
-
+            driver.manage.window.maximize
             driver.navigate.to "https://www.decolar.com/" 
 
             element = driver.find_element("class","header-autogestion-link")
@@ -16,4 +16,3 @@ describe "redirecionamento" do
             driver.quit
              end
     end
-	
