@@ -2,7 +2,7 @@ require 'selenium-webdriver'
 require 'rspec'
 
 describe "HomePage" do
-    it "Tela Login" do
+    it "Redirecionamento Facebook" do
         driver = Selenium::WebDriver.for :chrome
         driver.manage.window.maximize
         driver.navigate.to "https://www.saraiva.com.br/" 
@@ -65,6 +65,7 @@ describe "HomePage" do
         form.find_element(:xpath,"/html/body/div[3]/header/div[2]/div[2]/div[1]/div[2]/form/div/button[2]").click
         sleep 5
         expect(driver.title).to eq "Notebooks em Promoção nas americanas"
+        driver.quit
     end
 end
 
